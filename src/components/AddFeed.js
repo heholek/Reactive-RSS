@@ -12,8 +12,8 @@ class AddFeed extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      feed_name: "",
-      feed_url: "",
+      feedName: "",
+      feedLink: "",
       enabled: true
     };
     this.onChange = this.onChange.bind(this);
@@ -33,11 +33,11 @@ class AddFeed extends Component {
   onSubmit = e => {
     e.preventDefault();
 
-    const { feed_name, feed_url } = this.state;
+    const { feedName, feedLink } = this.state;
 
     const newFeed = {
-      feed_name,
-      feed_url
+      feedName,
+      feedLink
     };
 
     const { firestore, history } = this.props;
@@ -69,7 +69,7 @@ class AddFeed extends Component {
           <form onSubmit={this.onSubmit}>
             <TextField
               type="text"
-              name="feed_name"
+              name="feedName"
               onChange={e => {
                 this.handleSearchChange(e);
                 this.onChange(e);
@@ -81,11 +81,11 @@ class AddFeed extends Component {
               helperText="NAME"
               fullWidth
               margin="normal"
-              value={this.state.feed_name}
+              value={this.state.feedName}
             />
             <TextField
               type="text"
-              name="feed_url"
+              name="feedLink"
               onChange={e => {
                 this.handleSearchChange(e);
                 this.onChange(e);
@@ -97,7 +97,7 @@ class AddFeed extends Component {
               helperText="LINK"
               fullWidth
               margin="normal"
-              value={this.state.feed_url}
+              value={this.state.feedLink}
             />
             <div>
               <Button

@@ -28,7 +28,7 @@ class Dashboard extends Component {
   getFeed = e => {
     this.setState({ fetching: !this.state.fetching });
     e.preventDefault();
-    const feed_url = e.target.elements.feed_url.value;
+    const feedLink = e.target.elements.feedLink.value;
     let parser = new Parser({
       customFields: {
         item: [["enclosure", { keepArray: true }]]
@@ -36,10 +36,10 @@ class Dashboard extends Component {
     });
     const CORS_PROXY = "https://cors-anywhere.herokuapp.com/";
 
-    if (feed_url) {
+    if (feedLink) {
       (async () => {
         try {
-          let feed = await parser.parseURL(`${CORS_PROXY}${feed_url}`);
+          let feed = await parser.parseURL(`${CORS_PROXY}${feedLink}`);
           let arr = [];
           feed.items.forEach(item => {
             arr.push(item);

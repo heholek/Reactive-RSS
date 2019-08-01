@@ -25,8 +25,6 @@ class Search extends Component {
   onChange = e => this.setState({ [e.target.name]: e.target.value });
 
   render() {
-    console.log(this.state);
-
     return (
       <div>
         <form onSubmit={this.props.getFeed}>
@@ -37,7 +35,7 @@ class Search extends Component {
             margin="normal"
             variant="outlined"
             onChange={this.handleSearchChange}
-            name="feed_url"
+            name="feedLink"
           />
           <div>
             <Button
