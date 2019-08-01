@@ -7,15 +7,17 @@ import { reduxFirestore, firestoreReducer } from "redux-firestore";
 // import notifyReducer from "./reducers/notifyReducer";
 // import settingsReducer from "./reducers/settingsReducer";
 
+import { config } from "./config";
+
 const firebaseConfig = {
-  //  YOUR FIREBASE CONFIG FILE GOES HERE ...
-  apiKey: "AIzaSyDjVkTaWYsYlxkRXlaqlPdW9-H65Fr3l5I",
-  authDomain: "reactive-rss-d3f9c.firebaseapp.com",
-  databaseURL: "https://reactive-rss-d3f9c.firebaseio.com",
-  projectId: "reactive-rss-d3f9c",
-  storageBucket: "reactive-rss-d3f9c.appspot.com",
-  messagingSenderId: "391343765670",
-  appId: "1:391343765670:web:299051682bf16352"
+  //   //  YOUR FIREBASE CONFIG FILE GOES HERE ...
+  apiKey: config.apiKey,
+  authDomain: config.authDomain,
+  databaseURL: config.databaseURL,
+  projectId: config.projectId,
+  storageBucket: config.storageBucket,
+  messagingSenderId: config.messagingSenderId,
+  appId: config.appId
 };
 
 // react-redux-firebase config
